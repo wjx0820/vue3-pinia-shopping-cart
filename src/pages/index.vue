@@ -1,50 +1,38 @@
 <script setup lang="ts">
-const name = ref('')
+import { useStore } from '~/store'
 
-const router = useRouter()
-const go = () => {
-  if (name.value)
-    router.push(`/hi/${encodeURIComponent(name.value)}`)
-}
+const store = useStore()
 </script>
 
 <template>
-  <div>
-    <div i-carbon-campsite text-4xl inline-block />
-    <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse-lite" target="_blank">
-        Vitesse Lite
-      </a>
-    </p>
-    <p>
-      <em text-sm op75>Opinionated Vite Starter Template</em>
-    </p>
-
-    <div py-4 />
-
-    <input
-      id="input"
-      v-model="name"
-      placeholder="What's your name?"
-      type="text"
-      autocomplete="false"
-      p="x-4 y-2"
-      w="250px"
-      text="center"
-      bg="transparent"
-      border="~ rounded gray-200 dark:gray-700"
-      outline="none active:none"
-      @keydown.enter="go"
-    >
-
-    <div>
-      <button
-        class="m-3 text-sm btn"
-        :disabled="!name"
-        @click="go"
-      >
-        Go
-      </button>
+  <div class="container max-w-4xl mx-auto mt-60">
+    <div class="flex justify-around py-4 shadow-md rounded-xl">
+      <div class="text-5xl self-center font-bold">
+        买个菠萝
+      </div>
+      <div class="flex space-x-14">
+        <div class="relative">
+          <div class="i-twemoji-pineapple text-5xl inline-block" />
+          <div
+            class="absolute -top-4 left-12 w-8 h-8 text-2xl font-bold px-1 py-1 rounded-full bg-gray-800/10 text-gray-900"
+          >
+            {{ store.availablePinias }}
+          </div>
+        </div>
+        <div class="relative">
+          <div class="i-twemoji-shopping-cart text-5xl inline-block" />
+          <div
+            class="absolute -top-4 left-12 w-8 h-8 text-2xl font-bold p-1 self-center rounded-full bg-gray-800/10 text-gray-900"
+          >
+            {{ store.cart }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-8">
+      <PiniaMarket />
+      <PiniaCart />
+      <PiniaCheckout />
     </div>
   </div>
 </template>

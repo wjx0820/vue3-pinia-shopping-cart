@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@antfu/eslint-config': ^0.14.2
-  '@iconify-json/carbon': ^1.0.12
+  '@iconify-json/twemoji': ^1.0.2
   '@types/node': ^17.0.5
   '@unocss/reset': ^0.20.0
   '@vitejs/plugin-vue': ^2.0.1
@@ -10,6 +10,7 @@ specifiers:
   '@vueuse/core': ^7.4.1
   eslint: ^8.5.0
   jsdom: ^19.0.0
+  pinia: ^2.0.9
   pnpm: ^6.24.3
   typescript: ^4.5.4
   unocss: ^0.20.0
@@ -23,12 +24,13 @@ specifiers:
 
 dependencies:
   '@vueuse/core': 7.4.1_vue@3.2.26
+  pinia: 2.0.9_typescript@4.5.4+vue@3.2.26
   vue: 3.2.26
   vue-router: 4.0.12_vue@3.2.26
 
 devDependencies:
   '@antfu/eslint-config': 0.14.2_eslint@8.5.0+typescript@4.5.4
-  '@iconify-json/carbon': 1.0.12
+  '@iconify-json/twemoji': 1.0.2
   '@types/node': 17.0.5
   '@unocss/reset': 0.20.0
   '@vitejs/plugin-vue': 2.0.1_vite@2.7.9+vue@3.2.26
@@ -399,8 +401,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@iconify-json/carbon/1.0.12:
-    resolution: {integrity: sha512-wqO/tnPis6BRxY9QP2Wqprfnb90dPr3O0LBkaG7e/nE5C7KySrLEweBoTn129muENM40wwHCJ6hqzXrmgfhH/A==}
+  /@iconify-json/twemoji/1.0.2:
+    resolution: {integrity: sha512-kr1WiObcPMU4bJDLVH8x0tk5WaP95QFVsVIdNUMpbzYgx5vBa8lx9LKhOv+D6y+Co+bCAIP9N97ObaRM1fe4Kg==}
     dependencies:
       '@iconify/types': 1.0.12
     dev: true
@@ -736,6 +738,10 @@ packages:
 
   /@vue/devtools-api/6.0.0-beta.19:
     resolution: {integrity: sha512-ObzQhgkoVeoyKv+e8+tB/jQBL2smtk/NmC9OmFK8UqdDpoOdv/Kf9pyDWL+IFyM7qLD2C75rszJujvGSPSpGlw==}
+    dev: false
+
+  /@vue/devtools-api/6.0.0-beta.21.1:
+    resolution: {integrity: sha512-FqC4s3pm35qGVeXRGOjTsRzlkJjrBLriDS9YXbflHLsfA9FrcKzIyWnLXoNm+/7930E8rRakXuAc2QkC50swAw==}
     dev: false
 
   /@vue/reactivity-transform/3.2.26:
@@ -2887,6 +2893,24 @@ packages:
     resolution: {integrity: sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==}
     engines: {node: '>=8.6'}
     dev: true
+
+  /pinia/2.0.9_typescript@4.5.4+vue@3.2.26:
+    resolution: {integrity: sha512-iuYdxLJKQ07YPyOHYH05wNG9eKWqkP/4y4GE8+RqEYtz5fwHgPA5kr6zQbg/DoEJGnR2XCm1w1vdt6ppzL9ATg==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.0.0-beta.21.1
+      typescript: 4.5.4
+      vue: 3.2.26
+      vue-demi: 0.12.1_vue@3.2.26
+    dev: false
 
   /pkg-dir/2.0.0:
     resolution: {integrity: sha1-9tXREJ4Z1j7fQo4L1X4Sd3YVM0s=}

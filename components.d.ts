@@ -4,8 +4,10 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
-    Counter: typeof import('./src/components/Counter.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
+    PiniaCart: typeof import('./src/components/PiniaCart.vue')['default']
+    PiniaCheckout: typeof import('./src/components/PiniaCheckout.vue')['default']
+    PiniaMarket: typeof import('./src/components/PiniaMarket.vue')['default']
   }
 }
 
