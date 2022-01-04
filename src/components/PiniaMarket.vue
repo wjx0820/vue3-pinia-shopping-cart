@@ -26,9 +26,9 @@ const store = useStore()
         min="0"
         :max="store.availablePinias"
         class="bg-transparent border mr-4 w-15 text-center outline-none"
-        @keydown.enter="store.addToCart(amount)"
+        @keydown.enter="store.addToCart(amount),amount = 0"
       >
-      <button class="btn btn-blue flex" @click="store.addToCart(amount)">
+      <button class="btn flex" @click="store.addToCart(amount),amount = 0">
         添加
       </button>
     </footer>

@@ -24,9 +24,9 @@ const store = useStore()
         min="0"
         :max="store.cart"
         class="bg-transparent border mr-4 w-15 text-center outline-none"
-        @keydown.enter="store.removeFromCart(amount)"
+        @keydown.enter="store.removeFromCart(amount),amount = 0"
       >
-      <button class="btn btn-blue flex" @click="store.removeFromCart(amount)">
+      <button class="btn flex" @click="store.removeFromCart(amount),amount = 0">
         删除
       </button>
     </footer>

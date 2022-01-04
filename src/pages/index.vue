@@ -23,6 +23,12 @@ const store = useStore()
             <span>{{ store.cart }}</span>
           </Badge>
         </div>
+        <div class="relative">
+          <div class="i-twemoji-wrapped-gift text-5xl inline-block" />
+          <Badge class="bg-teal-600/10 text-teal-600 absolute -top-4 left-12 w-8 h-8">
+            <span>{{ store.$state.purchased }}</span>
+          </Badge>
+        </div>
       </div>
     </div>
     <div class="grid grid-cols-3 gap-8">
