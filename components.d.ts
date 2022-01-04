@@ -4,6 +4,7 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Badge: typeof import('./src/components/Badge.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     PiniaCart: typeof import('./src/components/PiniaCart.vue')['default']
     PiniaCheckout: typeof import('./src/components/PiniaCheckout.vue')['default']

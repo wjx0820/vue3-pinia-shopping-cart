@@ -1,14 +1,16 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
 
-export const useStore = defineStore('market', {
+export const useStore = defineStore({
+  id: 'market',
   state: () => ({
-    market: 24,
+    product: 42,
     cart: 0,
-    price: 120,
+    price: 10,
+    purchased: 0,
   }),
   getters: {
     availablePinias(state) {
-      return state.market - state.cart
+      return state.product - state.cart
     },
     total(state) {
       return state.cart * state.price
@@ -26,7 +28,8 @@ export const useStore = defineStore('market', {
         this.cart -= amount
     },
     checkout() {
-      this.market -= this.cart
+      this.product -= this.cart
+      this.purchased += this.cart
       this.cart = 0
     },
   },

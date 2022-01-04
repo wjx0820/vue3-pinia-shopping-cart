@@ -14,6 +14,6 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 })
-app.use(createPinia())
 app.use(router)
+app.use(createPinia())
 app.mount('#app')
